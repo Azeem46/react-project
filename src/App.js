@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import "./App.css"
-import SearchIcon from "./search.svg"
-import MovieCard from "./MovieCard"
+import "./App.css";
+import SearchIcon from "./search.svg";
+import MovieCard from "./MovieCard";
 
-const API_URL = "http://www.omdbapi.com?apiKey=df6320bf";
+const API_URL = "https://www.omdbapi.com?apiKey=df6320bf";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,11 +26,15 @@ const App = () => {
       <h1>MovieLand</h1>
 
       <div className="search">
-        <input type="text" 
-        placeholder="Search for a movie..." 
-        value={searchTerm} 
-        onChange={(e) => { setSearchTerm(e.target.value); searchMovies(e.target.value);
-         }} />
+        <input
+          type="text"
+          placeholder="Search for a movie..."
+          value={searchTerm}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            searchMovies(e.target.value);
+          }}
+        />
         <img
           src={SearchIcon}
           alt="search"
